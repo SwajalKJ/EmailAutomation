@@ -1,0 +1,18 @@
+import smtplib as s
+
+ob = s.SMTP('smtp.gmail.com', 587)
+ob.ehlo()
+ob.starttls()
+
+ob.login('_____Email__ID____', '___Password___')
+
+subject = '___Subject__of___Email____'
+body = '_____Content___as___needed____'
+message = "subject:{}\n\n{}".format(subject, body)
+
+listadd = ["___add__recipent__", "___can__be___multiple"]
+
+ob.sendmail('_____Email__ID____', listadd, message)
+print("send mail")
+
+ob.quit()
